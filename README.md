@@ -9,7 +9,7 @@ Ubuntu 22.04 LTS Docker container with systemd, useful for tests with `ansible` 
   - `22.04`, `jammy`, `latest` on main branch
   - `20.04`, `focal`  on main branch
   - `18.04`, `bionic` on 18.04 branch
-  - `16.04`, `bionic` on 16.04 branch
+  - `16.04`, `xenial` on 16.04 branch
 
 
 ## How to Build
@@ -24,7 +24,11 @@ Ubuntu 22.04 LTS Docker container with systemd, useful for tests with `ansible` 
 ## How to Use
 
   * `docker pull eniocarboni/docker-ubuntu-systemd:latest` (or use the image you built earlier).
-  * `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro eniocarboni/docker-ubuntu-systemd:latest`
+  * `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro --name jammy-systemd eniocarboni/docker-ubuntu-systemd:22.04`
+  * `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro --name focal-systemd eniocarboni/docker-ubuntu-systemd:20.04`
+  * `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro --name bionic-systemd eniocarboni/docker-ubuntu-systemd:18.04`
+  * `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro --name xenial-systemd eniocarboni/docker-ubuntu-systemd:16.04`
+
 
 View the run container with
 
